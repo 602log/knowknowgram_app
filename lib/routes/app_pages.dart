@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
+import 'package:knowknowgram_app/bindings/logic_list_binding.dart';
 import 'package:knowknowgram_app/home/views/screens/intro_screen.dart';
 import 'package:knowknowgram_app/routes/app_routes.dart';
 
 import '../bindings/home_binding.dart';
 import '../home/views/screens/home_screen.dart';
+import '../logic/screens/logic_list_screen.dart';
 
 class AppPages {
 
@@ -14,6 +16,14 @@ class AppPages {
       name: AppRoutes.HOME,
       page: () => IntroScreen(),
       binding: HomeBinding(),
+      transition: Transition.noTransition,
+    ),
+
+    GetPage(
+      name: AppRoutes.LOGIC_LIST,
+      page: () => LogicListScreen(),
+      binding: LogicListBinding(),
+      transition: Transition.noTransition,
     ),
 
   ];
