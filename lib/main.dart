@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       initialRoute: AppPages.INITIAL,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          color: backgroundGrey,
+          color: mediumBlack,
         )
       )
     );

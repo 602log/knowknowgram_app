@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:knowknowgram_app/common/custom_appbar.dart';
 import 'package:knowknowgram_app/home/views/components/home_container_widget.dart';
 import 'package:knowknowgram_app/theme/colors.dart';
 
@@ -9,25 +11,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundGrey,
-      appBar: AppBar(
-        backgroundColor: backgroundGrey,
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('KNOWKNOWGRAM',
-                style: GoogleFonts.modak().copyWith(
-                  color: mediumBlack,
-                  fontSize: 30.0,
-                )),
-            const Icon(
-              Icons.logout,
-            )
-          ],
-        ),
-      ),
+      backgroundColor: mediumBlack,
+      appBar: CustomAppbar(),
       body: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
@@ -44,15 +29,15 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Colors.white.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(35.0),
-                boxShadow: const [
-                  BoxShadow(
-                    color: darkGrey,
-                    blurRadius: 15.0,
-                    offset: Offset(2, 8),
-                  )
-                ],
+                // boxShadow: const [
+                //   BoxShadow(
+                //     color: mediumBlack,
+                //     blurRadius: 10.0,
+                //     offset: Offset(1, 8),
+                //   )
+                // ],
               ),
               child: Column(
                 // mainAxisSize: MainAxisSize.max,
@@ -63,6 +48,7 @@ class HomeScreen extends StatelessWidget {
                       Icon(
                         Icons.question_mark,
                         size: 100,
+                        color: Colors.white,
                       ),
                     ],
                   ),
@@ -89,7 +75,9 @@ class HomeScreen extends StatelessWidget {
                               Text(
                                 "이어서 풀기",
                                 style: GoogleFonts.notoSans(
-                                    color: Colors.white, fontSize: 15.0),
+                                  color: Colors.white,
+                                  fontSize: 15.0,
+                                ),
                               ),
                               const Icon(
                                 Icons.arrow_forward_ios_outlined,
@@ -109,9 +97,7 @@ class HomeScreen extends StatelessWidget {
 
           HomeContainerWidget(
             callBack: () {
-              print(
-                "노노그램 풀기 누름",
-              );
+              Get.toNamed('/logic_list');
             },
             title: "노노그램 풀기",
             icon: Icons.view_compact_outlined,

@@ -27,15 +27,15 @@ class HomeContainerWidget extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.white.withOpacity(0.1),
             borderRadius: BorderRadius.circular(50.0),
-            boxShadow: [
-              BoxShadow(
-                color: darkGrey,
-                blurRadius: 15.0,
-                offset: Offset(2, 8),
-              )
-            ],
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: darkGrey,
+            //     blurRadius: 15.0,
+            //     offset: Offset(2, 8),
+            //   )
+            // ],
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -46,6 +46,7 @@ class HomeContainerWidget extends StatelessWidget {
                   Icon(
                     icon,
                     size: 20.0,
+                    color: Colors.white,
                   ),
                   SizedBox(
                     width: 10.0,
@@ -53,15 +54,17 @@ class HomeContainerWidget extends StatelessWidget {
                   Text(
                     title,
                     style: GoogleFonts.notoSans(
-                        color: Colors.black,
-                        fontSize : 20.0
+                    ).copyWith(
+                      color: Colors.white,
+                      fontSize : 20.0,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ],
               ),
               Icon(
                 Icons.arrow_forward_ios_outlined,
-                color: Colors.black,
+                color: Colors.white,
                 size: 20.0,
               ),
             ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:knowknowgram_app/common/custom_appbar.dart';
 import 'package:knowknowgram_app/theme/colors.dart';
 
 import '../components/home_container_widget.dart';
@@ -15,96 +16,77 @@ class IntroScreen extends StatelessWidget {
         AppBar().preferredSize.height -
         MediaQuery.of(context).padding.top);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      backgroundColor: mediumBlack,
+      appBar: CustomAppbar(),
+      body: Container(
+        // decoration: BoxDecoration(
+        //   color: Colors.white.withOpacity(0.1),
+        // ),
+        child: ListView(
           children: [
-            Text(
-              'KNOWKNOWGRAM',
-              style: GoogleFonts.modak().copyWith(
-                color: mediumBlack,
-                fontSize: 30.0,
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              height: contentHeight / 4,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              '☑ 32 게임 완 ☑️',
+                              style: GoogleFonts.notoSans(
+                                color: Colors.white,
+                                fontSize: 15.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                '도비 님',
+                                style: GoogleFonts.blackHanSans(
+                                  color: Colors.white,
+                                  fontSize: 40.0,
+                                ),
+                                overflow: TextOverflow.clip,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Icon(
+                        Icons.question_mark_rounded,
+                        size: 250.0,
+                      color: mainMintText,
+                      shadows: [
+                        BoxShadow(
+                          color: mediumBlack,
+                          blurRadius: 15,
+                          offset: Offset(10, 20),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-            const Icon(
-              Icons.logout,
-            )
-          ],
-        ),
-      ),
-      body: ListView(
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            height: contentHeight / 4,
-            decoration: BoxDecoration(
-              color: Colors.white,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            '☑ 32 게임 완 ☑️',
-                            style: GoogleFonts.notoSans(
-                              color: mediumBlack,
-                              fontSize: 15.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              '도비 님',
-                              style: GoogleFonts.blackHanSans(
-                                color: mediumBlack,
-                                fontSize: 40.0,
-                              ),
-                              overflow: TextOverflow.clip,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Icon(
-                      Icons.question_mark_rounded,
-                      size: 250.0,
-                    color: darkGrey,
-                    shadows: [
-                      BoxShadow(
-                        color: mediumBlack,
-                        blurRadius: 15,
-                        offset: Offset(10, 20),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: contentHeight / 4 * 3,
-            color: Colors.white,
-            child: Container(
+            Container(
+              height: contentHeight / 4 * 3,
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(80.0),
                       topLeft: Radius.circular(80.0)),
-                  color: backgroundGrey,
+                  color: mediumBlack,
                   boxShadow: [
                     BoxShadow(
                       color: darkGrey,
@@ -123,13 +105,13 @@ class IntroScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(35.0),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: darkGrey,
-                            blurRadius: 15.0,
-                            offset: Offset(2, 8),
-                          )
-                        ],
+                        // boxShadow: const [
+                        //   BoxShadow(
+                        //     color: darkGrey,
+                        //     blurRadius: 15.0,
+                        //     offset: Offset(2, 8),
+                        //   )
+                        // ],
                       ),
                       child: Column(
                         // mainAxisSize: MainAxisSize.max,
@@ -187,9 +169,7 @@ class IntroScreen extends StatelessWidget {
                   ),
                   HomeContainerWidget(
                     callBack: () {
-                      print(
-                        "노노그램 풀기 누름",
-                      );
+                      Get.toNamed('/logic_list');
                     },
                     title: "노노그램 풀기",
                     icon: Icons.view_compact_outlined,
@@ -224,8 +204,8 @@ class IntroScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         height: 50,
