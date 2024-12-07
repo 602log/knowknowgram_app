@@ -28,7 +28,7 @@ class HomeContainerWidget extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(35.0),
+            borderRadius: BorderRadius.circular(50.0),
             boxShadow: [
               BoxShadow(
                 color: darkGrey,

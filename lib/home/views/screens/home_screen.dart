@@ -114,7 +114,7 @@ class HomeScreen extends StatelessWidget {
               );
             },
             title: "노노그램 풀기",
-            icon: Icons.view_module_outlined,
+            icon: Icons.view_compact_outlined,
           ),
           HomeContainerWidget(
             callBack: () {

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:knowknowgram_app/home/views/screens/intro_screen.dart';
 import 'package:knowknowgram_app/routes/app_routes.dart';
 
 import '../bindings/home_binding.dart';
@@ -8,10 +9,12 @@ class AppPages {
 
   static const INITIAL = AppRoutes.HOME;
   static final routes = [
+
     GetPage(
       name: AppRoutes.HOME,
-      page: () => HomeScreen(),
+      page: () => IntroScreen(),
       binding: HomeBinding(),
     ),
+
   ];
 }

@@ -6,6 +6,4 @@ class HomeBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<HomeScreen>(() => const HomeScreen());
   }
-
-
 }
