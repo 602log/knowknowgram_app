@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:knowknowgram_app/common/custom_appbar.dart';
 import 'package:knowknowgram_app/logic/components/filter_button_widget.dart';
@@ -141,7 +142,7 @@ class _LogicListScreenState extends State<LogicListScreen> {
               //   ),
               // ),
 
-              // logic list
+              // logic item list
               Align(
                 alignment: Alignment.topCenter,
                 child: Wrap(
@@ -152,7 +153,9 @@ class _LogicListScreenState extends State<LogicListScreen> {
                       isSuccess: e['isSuccess'],
                       times: e['times'],
                       like: e['like'],
-                      callback: () {},
+                      callback: () {
+                        Get.toNamed('/play');
+                      },
                     );
                   }).toList(),
                 ),

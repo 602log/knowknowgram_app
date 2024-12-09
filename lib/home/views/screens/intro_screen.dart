@@ -69,9 +69,9 @@ class IntroScreen extends StatelessWidget {
                       color: mainMintText,
                       shadows: [
                         BoxShadow(
-                          color: mediumBlack,
-                          blurRadius: 15,
-                          offset: Offset(10, 20),
+                          color: darkGrey,
+                          blurRadius: 30,
+                          offset: Offset(10, 5),
                         )
                       ],
                     ),
