@@ -65,6 +65,7 @@ class _PlayScreenState extends State<PlayScreen> {
     setState(() {
       // 0 -> 1 -> -1 -> 0 순환
       grid[row][col] = (grid[row][col] + 1) % 3;
+      print('클릭 row : $row , col $col ${grid[row][col]}');
     });
   }
 
@@ -78,6 +79,7 @@ class _PlayScreenState extends State<PlayScreen> {
 
     setState(() {
       grid[row][col] = currentState;
+      print('드래그 row : $row , col $col ${grid[row][col]}');
     });
   }
 
@@ -175,6 +177,8 @@ class _PlayScreenState extends State<PlayScreen> {
                           itemBuilder: (context, index) {
                             int row = index ~/ gridSize;
                             int col = index % gridSize;
+
+                            double iconSize = (constraints.maxWidth / gridSize);
                   
                             return GestureDetector(
                               onTap: () {
@@ -188,7 +192,8 @@ class _PlayScreenState extends State<PlayScreen> {
                                               ? Center(
                                                   child: Icon(
                                                     Icons.close,
-                                                    color: Colors.black,
+                                                    color: mainMintText,
+                                                    size: iconSize,
                                                   ),
                                                 )
                                               : null,
