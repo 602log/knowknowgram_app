@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:knowknowgram_app/common/custom_appbar.dart';
 import 'package:knowknowgram_app/logic/components/filter_button_widget.dart';
+import 'package:knowknowgram_app/logic/components/logic_list_item_widget.dart';
 import 'package:knowknowgram_app/theme/colors.dart';
 
 class LogicListScreen extends StatefulWidget {
@@ -140,8 +141,6 @@ class _LogicListScreenState extends State<LogicListScreen> {
               //   ),
               // ),
 
-
-
               // logic list
               Align(
                 alignment: Alignment.topCenter,
@@ -149,56 +148,11 @@ class _LogicListScreenState extends State<LogicListScreen> {
                   spacing: 20,
                   runSpacing: 25,
                   children: logicItem.map((e) {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                              width: 100,
-                              height: 100,
-                              // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  e['isSuccess'] ? '♕' : e['times'],
-                                  style: GoogleFonts.notoSans().copyWith(
-                                    color: e['isSuccess']
-                                        ? mainMintText
-                                        : Colors.white,
-                                    fontSize: e['isSuccess'] ? 50 : 18.0,
-                                    fontWeight: FontWeight.w900,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.favorite_outline,
-                              size: 13.0,
-                              color: mainMintText,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              '10',
-                              style: GoogleFonts.notoSans().copyWith(
-                                color: Colors.white,
-                                fontSize: 13.0,
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
+                    return LogicListItemWidget(
+                      isSuccess: e['isSuccess'],
+                      times: e['times'],
+                      like: e['like'],
+                      callback: () {},
                     );
                   }).toList(),
                 ),
