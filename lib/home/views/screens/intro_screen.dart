@@ -212,7 +212,7 @@ class IntroScreen extends StatelessWidget {
         color: Colors.yellow,
         child: Container(
         ),
-      )
+      ),
     );
   }
 }

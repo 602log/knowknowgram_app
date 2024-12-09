@@ -191,7 +191,7 @@ class _PlayScreenState extends State<PlayScreen> {
                                           child: grid[row][col] == 2
                                               ? Center(
                                                   child: Icon(
-                                                    Icons.close,
+                                                    Icons.close_rounded,
                                                     color: mainMintText,
                                                     size: iconSize,
                                                   ),
@@ -239,10 +239,19 @@ class _PlayScreenState extends State<PlayScreen> {
             ),
             Expanded(
               child: Container(
-                color: Colors.yellow,
+                child: Row(
+                  children: [
+                  ],
+                ),
               ),
             ),
           ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        height: 50,
+        color: Colors.yellow,
+        child: Container(
         ),
       ),
     );
