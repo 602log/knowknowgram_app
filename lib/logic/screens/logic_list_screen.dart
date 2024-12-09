@@ -35,106 +35,176 @@ class _LogicListScreenState extends State<LogicListScreen> {
     return Scaffold(
       backgroundColor: mediumBlack,
       appBar: CustomAppbar(),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // logic list fliter
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              // logic list fliter
+              Row(
                 children: [
-                  FilterButtonWidget(
-                    title: '추천순',
-                  ),
-                  FilterButtonWidget(
-                    title: '인기순',
-                  ),
-                  FilterButtonWidget(
-                    title: '등록일순',
-                  ),
-
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                    decoration: BoxDecoration(
-                        color: selected
-                            ? mainMintText
-                            : Colors.white.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(30.0),),
-                    child: DropdownButton(
-                      alignment: AlignmentDirectional.center,
-                      padding: EdgeInsets.zero,
-                      dropdownColor: mediumBlack,
-                      iconSize: 0.0,
-                      underline: SizedBox(),
-                      isDense: true,
-                      hint: Text(
-                        selectedStr,
-                        style: GoogleFonts.notoSans().copyWith(
-                        color: !selected ? Colors.white : mediumBlack,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        FilterButtonWidget(
+                          title: '추천순',
                         ),
-                      ),
-                      items: item.map((e) {
-                        return DropdownMenuItem(
-                          child: Center(
-                            child: Text(
-                                e,
-                              textAlign: TextAlign.center,
+                        FilterButtonWidget(
+                          title: '인기순',
+                        ),
+                        FilterButtonWidget(
+                          title: '등록일순',
+                        ),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10.0, vertical: 10.0),
+                          decoration: BoxDecoration(
+                            color: selected
+                                ? mainMintText
+                                : Colors.white.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: DropdownButton(
+                            alignment: AlignmentDirectional.center,
+                            padding: EdgeInsets.zero,
+                            dropdownColor: mediumBlack,
+                            iconSize: 0.0,
+                            underline: SizedBox(),
+                            isDense: true,
+                            hint: Text(
+                              selectedStr,
                               style: GoogleFonts.notoSans().copyWith(
-                                color: Colors.white,
+                                color: !selected ? Colors.white : mediumBlack,
                               ),
                             ),
+                            items: item.map((e) {
+                              return DropdownMenuItem(
+                                child: Center(
+                                  child: Text(
+                                    e,
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.notoSans().copyWith(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                value: e,
+                              );
+                            }).toList(),
+                            onChanged: (dynamic value) {
+                              setState(() {
+                                print(value);
+                                selected = value == '칸수' ? false : true;
+                                selectedStr = value;
+                              });
+                            },
                           ),
-                          value: e,
-                        );
-                      }).toList(),
-                      onChanged: (dynamic value) {
-                        setState(() {
-                          print(value);
-                          selected = value == '칸수' ? false : true;
-                          selectedStr = value;
-                        });
-                      },
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
-            ),
 
-            SizedBox(
-              height: 20,
-            ),
-
-            // logic list
-            Align(
-              alignment: Alignment.topCenter,
-              child: Wrap(
-                spacing: 20,
-                runSpacing: 25,
-                children: logicItem.map((e) {
-                  return Container(
-                    width: 100,
-                    height: 100,
-                    // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Center(
-                      child: Text(e['isSuccess'] ? '♕' : e['times'],
-                          style: GoogleFonts.notoSans().copyWith(
-                            color: e['isSuccess'] ? mainMintText : Colors.white,
-                            fontSize: e['isSuccess'] ? 50 : 18.0,
-                            fontWeight: FontWeight.w900,
-                          ),),
-                    ),
-                  );
-                }).toList(),
+              SizedBox(
+                height: 20,
               ),
-            ),
-          ],
+
+              // Align(
+              //   alignment: Alignment.topCenter,
+              //   child: Wrap(
+              //     spacing: 20,
+              //     runSpacing: 25,
+              //     children: logicItem.map((e) {
+              //       return Container(
+              //         width: 100,
+              //         height: 100,
+              //         // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+              //         decoration: BoxDecoration(
+              //           color: Colors.white.withOpacity(0.1),
+              //           borderRadius: BorderRadius.circular(20.0),
+              //         ),
+              //         child: Center(
+              //           child: Text(e['isSuccess'] ? '♕' : e['times'],
+              //             style: GoogleFonts.notoSans().copyWith(
+              //               color: e['isSuccess'] ? mainMintText : Colors.white,
+              //               fontSize: e['isSuccess'] ? 50 : 18.0,
+              //               fontWeight: FontWeight.w900,
+              //             ),),
+              //         ),
+              //       );
+              //     }).toList(),
+              //   ),
+              // ),
+
+
+
+              // logic list
+              Align(
+                alignment: Alignment.topCenter,
+                child: Wrap(
+                  spacing: 20,
+                  runSpacing: 25,
+                  children: logicItem.map((e) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              width: 100,
+                              height: 100,
+                              // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  e['isSuccess'] ? '♕' : e['times'],
+                                  style: GoogleFonts.notoSans().copyWith(
+                                    color: e['isSuccess']
+                                        ? mainMintText
+                                        : Colors.white,
+                                    fontSize: e['isSuccess'] ? 50 : 18.0,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.favorite_outline,
+                              size: 13.0,
+                              color: mainMintText,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              '10',
+                              style: GoogleFonts.notoSans().copyWith(
+                                color: Colors.white,
+                                fontSize: 13.0,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    );
+                  }).toList(),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -175,5 +245,16 @@ class _LogicListScreenState extends State<LogicListScreen> {
       'isSuccess': true,
     },
     {'index': 13, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 14, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 15, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 16, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 17, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 18, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 19, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 20, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 21, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 22, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 23, 'times': '25x25', 'like': 78, 'isSuccess': false},
+    {'index': 24, 'times': '25x25', 'like': 78, 'isSuccess': false},
   ];
 }
