@@ -71,11 +71,10 @@ class _PlayScreenState extends State<PlayScreen> {
 
   // 특정 좌표에서 셀 상태 업데이트
   void _updateCell (Offset position, BoxConstraints constraints) {
-    final cellWidth = constraints.maxWidth / gridSize;
-    final cellHeight = constraints.maxHeight / gridSize;
+    final cellSize = constraints.maxWidth / gridSize;
 
-    final int row = (position.dy ~/ cellHeight).clamp(0, gridSize-1);
-    final int col = (position.dx ~/ cellWidth).clamp(0, gridSize-1);
+    final int row = (position.dy ~/ cellSize).clamp(0, gridSize-1);
+    final int col = (position.dx ~/ cellSize).clamp(0, gridSize-1);
 
     setState(() {
       grid[row][col] = currentState;
@@ -168,6 +167,8 @@ class _PlayScreenState extends State<PlayScreen> {
                         _updateCell(details.localPosition, constraints);
                       },
                       child: GridView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: gridSize,
                             mainAxisSpacing: 1,
