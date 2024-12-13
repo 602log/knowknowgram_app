@@ -113,32 +113,33 @@ class _LogicListScreenState extends State<LogicListScreen> {
                 height: 20,
               ),
 
-              Align(
-                alignment: Alignment.topCenter,
-                child: Wrap(
-                  spacing: 20,
-                  runSpacing: 25,
-                  children: logicItem.map((e) {
-                    return Container(
-                      width: 100,
-                      height: 100,
-                      // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: Center(
-                        child: Text(e['isSuccess'] ? '♕' : e['times'],
-                          style: GoogleFonts.notoSans().copyWith(
-                            color: e['isSuccess'] ? mainMintText : Colors.white,
-                            fontSize: e['isSuccess'] ? 50 : 18.0,
-                            fontWeight: FontWeight.w900,
-                          ),),
-                      ),
-                    );
-                  }).toList(),
-                ),
-              ),
+              // 좋아요 제외 item version
+              // Align(
+              //   alignment: Alignment.topCenter,
+              //   child: Wrap(
+              //     spacing: 20,
+              //     runSpacing: 25,
+              //     children: logicItem.map((e) {
+              //       return Container(
+              //         width: 100,
+              //         height: 100,
+              //         // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+              //         decoration: BoxDecoration(
+              //           color: Colors.white.withOpacity(0.1),
+              //           borderRadius: BorderRadius.circular(20.0),
+              //         ),
+              //         child: Center(
+              //           child: Text(e['isSuccess'] ? '♕' : e['times'],
+              //             style: GoogleFonts.notoSans().copyWith(
+              //               color: e['isSuccess'] ? mainMintText : Colors.white,
+              //               fontSize: e['isSuccess'] ? 50 : 18.0,
+              //               fontWeight: FontWeight.w900,
+              //             ),),
+              //         ),
+              //       );
+              //     }).toList(),
+              //   ),
+              // ),
 
               //logic item list
               Align(
