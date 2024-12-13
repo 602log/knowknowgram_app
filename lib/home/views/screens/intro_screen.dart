@@ -65,7 +65,7 @@ class IntroScreen extends StatelessWidget {
                   Expanded(
                     child: Icon(
                         Icons.question_mark_rounded,
-                        size: 250.0,
+                        size: contentHeight * 0.3,
                       color: mainMintText,
                       shadows: [
                         BoxShadow(

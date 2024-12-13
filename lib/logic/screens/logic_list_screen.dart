@@ -43,106 +43,104 @@ class _LogicListScreenState extends State<LogicListScreen> {
           child: Column(
             children: [
               // logic list fliter
-              Row(
-                children: [
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        FilterButtonWidget(
-                          title: '추천순',
-                        ),
-                        FilterButtonWidget(
-                          title: '인기순',
-                        ),
-                        FilterButtonWidget(
-                          title: '등록일순',
-                        ),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10.0, vertical: 10.0),
-                          decoration: BoxDecoration(
-                            color: selected
-                                ? mainMintText
-                                : Colors.white.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(30.0),
-                          ),
-                          child: DropdownButton(
-                            alignment: AlignmentDirectional.center,
-                            padding: EdgeInsets.zero,
-                            dropdownColor: mediumBlack,
-                            iconSize: 0.0,
-                            underline: SizedBox(),
-                            isDense: true,
-                            hint: Text(
-                              selectedStr,
-                              style: GoogleFonts.notoSans().copyWith(
-                                color: !selected ? Colors.white : mediumBlack,
-                              ),
+              SizedBox(
+                height: 50,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    FilterButtonWidget(
+                      title: '추천순',
+                    ),
+                    FilterButtonWidget(
+                      title: '인기순',
+                    ),
+                    FilterButtonWidget(
+                      title: '등록일순',
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 10.0),
+                      decoration: BoxDecoration(
+                        color: selected
+                            ? mainMintText
+                            : Colors.white.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      child: Center(
+                        child: DropdownButton(
+                          alignment: AlignmentDirectional.center,
+                          padding: EdgeInsets.zero,
+                          dropdownColor: mediumBlack,
+                          iconSize: 0.0,
+                          underline: SizedBox(),
+                          isDense: true,
+                          hint: Text(
+                            selectedStr,
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.notoSans().copyWith(
+                              color: !selected ? Colors.white : mediumBlack,
                             ),
-                            items: item.map((e) {
-                              return DropdownMenuItem(
-                                child: Center(
-                                  child: Text(
-                                    e,
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.notoSans().copyWith(
-                                      color: Colors.white,
-                                    ),
+                          ),
+                          items: item.map((e) {
+                            return DropdownMenuItem(
+                              child: Center(
+                                child: Text(
+                                  e,
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.notoSans().copyWith(
+                                    color: Colors.white,
                                   ),
                                 ),
-                                value: e,
-                              );
-                            }).toList(),
-                            onChanged: (dynamic value) {
-                              setState(() {
-                                print(value);
-                                selected = value == '칸수' ? false : true;
-                                selectedStr = value;
-                              });
-                            },
-                          ),
+                              ),
+                              value: e,
+                            );
+                          }).toList(),
+                          onChanged: (dynamic value) {
+                            setState(() {
+                              print(value);
+                              selected = value == '칸수' ? false : true;
+                              selectedStr = value;
+                            });
+                          },
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
 
               SizedBox(
                 height: 20,
               ),
 
-              // Align(
-              //   alignment: Alignment.topCenter,
-              //   child: Wrap(
-              //     spacing: 20,
-              //     runSpacing: 25,
-              //     children: logicItem.map((e) {
-              //       return Container(
-              //         width: 100,
-              //         height: 100,
-              //         // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-              //         decoration: BoxDecoration(
-              //           color: Colors.white.withOpacity(0.1),
-              //           borderRadius: BorderRadius.circular(20.0),
-              //         ),
-              //         child: Center(
-              //           child: Text(e['isSuccess'] ? '♕' : e['times'],
-              //             style: GoogleFonts.notoSans().copyWith(
-              //               color: e['isSuccess'] ? mainMintText : Colors.white,
-              //               fontSize: e['isSuccess'] ? 50 : 18.0,
-              //               fontWeight: FontWeight.w900,
-              //             ),),
-              //         ),
-              //       );
-              //     }).toList(),
-              //   ),
-              // ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: Wrap(
+                  spacing: 20,
+                  runSpacing: 25,
+                  children: logicItem.map((e) {
+                    return Container(
+                      width: 100,
+                      height: 100,
+                      // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Center(
+                        child: Text(e['isSuccess'] ? '♕' : e['times'],
+                          style: GoogleFonts.notoSans().copyWith(
+                            color: e['isSuccess'] ? mainMintText : Colors.white,
+                            fontSize: e['isSuccess'] ? 50 : 18.0,
+                            fontWeight: FontWeight.w900,
+                          ),),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
 
-              // logic item list
+              //logic item list
               Align(
                 alignment: Alignment.topCenter,
                 child: Wrap(
