@@ -167,6 +167,13 @@ class IntroScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20.0),
+                    child: Container(
+                      height: 80,
+                      color: Colors.yellow,
+                    ),
+                  ),
                   HomeContainerWidget(
                     callBack: () {
                       Get.toNamed('/logic_list');
@@ -205,12 +212,6 @@ class IntroScreen extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        height: 50,
-        color: Colors.yellow,
-        child: Container(
         ),
       ),
     );

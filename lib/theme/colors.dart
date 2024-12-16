@@ -8,6 +8,7 @@ const darkGrey = Color(0xFF52616B);
 const mediumBlack = Color(0xFF1E2022);
 const sideMintText = Color(0xFF45FFCA);
 const mainMintText = Color(0xFF00FF9C);
+const splashMint = Color(0xffc4ffe8);
 const backgroundDark = LinearGradient(
   begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
