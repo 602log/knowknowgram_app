@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:knowknowgram_app/common/custom_appbar.dart';
 import 'package:knowknowgram_app/theme/colors.dart';
 
+import '../../../ad_banner.dart';
 import '../components/home_container_widget.dart';
 
 class IntroScreen extends StatelessWidget {
+
   const IntroScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
+
     double contentHeight =
         (MediaQuery.of(context).size.height -
         AppBar().preferredSize.height -
@@ -169,10 +174,7 @@ class IntroScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 20.0),
-                    child: Container(
-                      height: 80,
-                      color: Colors.yellow,
-                    ),
+                    child: MyBannerAdWidget()
                   ),
                   HomeContainerWidget(
                     callBack: () {
@@ -183,9 +185,7 @@ class IntroScreen extends StatelessWidget {
                   ),
                   HomeContainerWidget(
                     callBack: () {
-                      print(
-                        "노노그램 만들기 누름",
-                      );
+                      Get.toNamed('/generate');
                     },
                     title: "노노그램 만들기",
                     icon: Icons.app_registration,
