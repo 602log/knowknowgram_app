@@ -4,6 +4,7 @@ import 'package:knowknowgram_app/bindings/logic_list_binding.dart';
 import 'package:knowknowgram_app/bindings/play_binding.dart';
 import 'package:knowknowgram_app/bindings/rank_binding.dart';
 import 'package:knowknowgram_app/bindings/user_info_binding.dart';
+import 'package:knowknowgram_app/generate/screens/generate_option_screen.dart';
 import 'package:knowknowgram_app/generate/screens/generate_screen.dart';
 import 'package:knowknowgram_app/home/views/screens/intro_screen.dart';
 import 'package:knowknowgram_app/play/screens/play_screen.dart';
@@ -34,6 +35,12 @@ class AppPages {
       name: AppRoutes.PLAY,
       page: () => PlayScreen(),
       binding: PlayBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: AppRoutes.GENERATE_OPTION,
+      page: () => GenerateOptionScreen(),
+      binding: GenerateBinding(),
       transition: Transition.noTransition,
     ),
     GetPage(

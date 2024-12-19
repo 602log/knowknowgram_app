@@ -185,7 +185,7 @@ class IntroScreen extends StatelessWidget {
                   ),
                   HomeContainerWidget(
                     callBack: () {
-                      Get.toNamed('/generate');
+                      Get.toNamed('/generate_option');
                     },
                     title: "노노그램 만들기",
                     icon: Icons.app_registration,
