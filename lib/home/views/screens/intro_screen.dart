@@ -5,7 +5,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:knowknowgram_app/common/custom_appbar.dart';
 import 'package:knowknowgram_app/theme/colors.dart';
 
-import '../../../ad_banner.dart';
+import '../../../common/ad_banner.dart';
 import '../components/home_container_widget.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -201,9 +201,7 @@ class IntroScreen extends StatelessWidget {
                   ),
                   HomeContainerWidget(
                     callBack: () {
-                      print(
-                        "내정보 누름",
-                      );
+                      Get.toNamed('/user_info');
                     },
                     title: "내정보",
                     icon: Icons.face,

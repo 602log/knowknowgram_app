@@ -1,12 +1,15 @@
 import 'package:get/get.dart';
+import 'package:knowknowgram_app/bindings/generate_binding.dart';
 import 'package:knowknowgram_app/bindings/logic_list_binding.dart';
 import 'package:knowknowgram_app/bindings/play_binding.dart';
+import 'package:knowknowgram_app/bindings/user_info_binding.dart';
+import 'package:knowknowgram_app/generate/screens/generate_screen.dart';
 import 'package:knowknowgram_app/home/views/screens/intro_screen.dart';
 import 'package:knowknowgram_app/play/screens/play_screen.dart';
 import 'package:knowknowgram_app/routes/app_routes.dart';
+import 'package:knowknowgram_app/user_info/screens/user_screen.dart';
 
 import '../bindings/home_binding.dart';
-import '../home/views/screens/home_screen.dart';
 import '../logic/screens/logic_list_screen.dart';
 
 class AppPages {
@@ -28,6 +31,18 @@ class AppPages {
       name: AppRoutes.PLAY,
       page: () => PlayScreen(),
       binding: PlayBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: AppRoutes.GENERATE,
+      page: () => GenerateScreen(),
+      binding: GenerateBinding(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: AppRoutes.USERINFO,
+      page: () => UserScreen(),
+      binding: UserInfoBinding(),
       transition: Transition.noTransition,
     )
   ];
