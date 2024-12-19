@@ -208,7 +208,7 @@ class _UserScreenState extends State<UserScreen> {
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.only(top: 20.0),
               child: Row(
                 mainAxisAlignment:  MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -232,65 +232,72 @@ class _UserScreenState extends State<UserScreen> {
               ),
             ),
 
-            Container(
-              padding: EdgeInsets.symmetric(
-                vertical: 10.0,
-                horizontal: 16.0,
-              ),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.1),
-                border: Border.all(
-                  color: mainMintText,
-                  width: 3.0,
-                ),
-                borderRadius: BorderRadius.circular(
-                  35.0,
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 80,
-                    width: 80,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            'https://i.namu.wiki/i/icK0iZzkZlDEOP6MLwBXsYzojDOK99nLajS4WbfAmoIJ5liI0rHevtBzPVt08lKvt1u7hhiYEt4dlz1XL2lW9XQTxgYkP9HP4-3C7PinFptyVJ4VtTt9redYHtul6LJAXfPKDxxA_E53jXQKpCoecQ.webp',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                        shape: BoxShape.circle),
-                  ),
-                  Row(
-                    // crossAxisAlignment: CrossAxisAlignment.start,
-                    textBaseline: TextBaseline.alphabetic,
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    children: [
-                      Text(
-                        '♚ ',
-                        style: GoogleFonts.notoSans(
-                          color: mainMintText,
-                          fontSize: 50.0,
-                          height: 1.0,
-                        ),
-                      ),
-                      Text(
-                        '37490',
-                        style: GoogleFonts.notoSans(
-                          color: Colors.white,
-                          fontSize: 25.0,
-                          height: 1.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+            Text(
+              '☑️ 32게임 완 ☑️',
+              style: GoogleFonts.notoSans(
+                color: Colors.white,
+                fontSize: 15.0,
               ),
             ),
 
-            SizedBox(
-              height: 30,
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0, bottom: 30.0),
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  vertical: 10.0,
+                  horizontal: 16.0,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.1),
+                  border: Border.all(
+                    color: mainMintText,
+                    width: 3.0,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    35.0,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              'https://i.namu.wiki/i/icK0iZzkZlDEOP6MLwBXsYzojDOK99nLajS4WbfAmoIJ5liI0rHevtBzPVt08lKvt1u7hhiYEt4dlz1XL2lW9XQTxgYkP9HP4-3C7PinFptyVJ4VtTt9redYHtul6LJAXfPKDxxA_E53jXQKpCoecQ.webp',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                          shape: BoxShape.circle),
+                    ),
+                    Row(
+                      // crossAxisAlignment: CrossAxisAlignment.start,
+                      textBaseline: TextBaseline.alphabetic,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      children: [
+                        Text(
+                          '♚ ',
+                          style: GoogleFonts.notoSans(
+                            color: mainMintText,
+                            fontSize: 50.0,
+                            height: 1.0,
+                          ),
+                        ),
+                        Text(
+                          '37490',
+                          style: GoogleFonts.notoSans(
+                            color: Colors.white,
+                            fontSize: 25.0,
+                            height: 1.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
 
             Row(

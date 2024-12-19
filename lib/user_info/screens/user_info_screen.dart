@@ -23,170 +23,11 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
       appBar: CustomAppbar(),
       body: Stack(
         children: [
-          // 배경용
+          // 프로필 사진
           Column(
             children: [
-              Expanded(
-                  child: InkWell(
-                onTap: () {
-                  showModalBottomSheet(
-                      isScrollControlled: true,
-                      context: context,
-                      builder: (_) {
-                        // TODO: controller 추가 후 진행
-                        // return ProfileBottomSheetWidget();
-
-                        // TODO: controller 추가 전 임시
-                        return SafeArea(
-                          child: Wrap(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.transparent,
-                                  borderRadius: BorderRadius.circular(
-                                    35.0,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16.0),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: Opacity(
-                                              opacity: 0.6,
-                                              child: InkWell(
-                                                onTap: () {
-                                                  getImage(ImageSource.camera);
-                                                },
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(20.0),
-                                                      topRight:
-                                                          Radius.circular(20.0),
-                                                    ),
-                                                  ),
-                                                  child: Center(
-                                                    child: Padding(
-                                                      padding: const EdgeInsets
-                                                          .symmetric(
-                                                          vertical: 15.0),
-                                                      child: Text(
-                                                        '카메라 선택',
-                                                        style: GoogleFonts
-                                                            .notoSans(
-                                                          color: Colors.black,
-                                                          fontSize: 20.0,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 1,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: Opacity(
-                                              opacity: 0.6,
-                                              child: InkWell(
-                                                onTap: () {
-                                                  getImage(ImageSource.gallery);
-                                                },
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(20.0),
-                                                      bottomRight:
-                                                          Radius.circular(20.0),
-                                                    ),
-                                                  ),
-                                                  child: Center(
-                                                    child: Padding(
-                                                      padding: const EdgeInsets
-                                                          .symmetric(
-                                                          vertical: 15.0),
-                                                      child: Text(
-                                                        '앨범에서 사진 선택',
-                                                        style: GoogleFonts
-                                                            .notoSans(
-                                                          color: Colors.black,
-                                                          fontSize: 20.0,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: Opacity(
-                                              opacity: 0.6,
-                                              child: InkWell(
-                                                onTap: () {
-                                                  Navigator.pop(context);
-                                                },
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20.0),
-                                                  ),
-                                                  child: Center(
-                                                    child: Padding(
-                                                      padding: const EdgeInsets
-                                                          .symmetric(
-                                                          vertical: 15),
-                                                      child: Text(
-                                                        '취소',
-                                                        style: GoogleFonts
-                                                            .notoSans(
-                                                          color: Colors.black,
-                                                          fontSize: 20.0,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                      backgroundColor: Colors.transparent);
-                },
+              Container(
+                height: MediaQuery.of(context).size.height / 2,
                 child: Stack(
                   children: [
                     Container(
@@ -212,123 +53,322 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                         end: Alignment.bottomCenter,
                       )),
                     ),
-                    Center(
+
+                  ],
+                ),
+              ),
+
+            ],
+          ),
+
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                InkWell(
+                  onTap: () {
+                    showModalBottomSheet(
+                        isScrollControlled: true,
+                        context: context,
+                        builder: (_) {
+                          // TODO: controller 추가 후 진행
+                          // return ProfileBottomSheetWidget();
+
+                          // TODO: controller 추가 전 임시
+                          return SafeArea(
+                            child: Wrap(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16.0),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  topLeft:
+                                                  Radius.circular(
+                                                      20.0),
+                                                  topRight:
+                                                  Radius.circular(
+                                                      20.0),
+                                                ),
+                                              ),
+                                              child: Center(
+                                                child: Padding(
+                                                  padding:
+                                                  const EdgeInsets
+                                                      .symmetric(
+                                                      vertical: 12.0),
+                                                  child: Text(
+                                                    '프로필 사진 설정',
+                                                    style: GoogleFonts
+                                                        .notoSans(
+                                                      color: Colors.black,
+                                                      fontSize: 12.0,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 1,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: InkWell(
+                                              onTap: () {
+                                                getImage(
+                                                    ImageSource.camera);
+                                              },
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                ),
+                                                child: Center(
+                                                  child: Padding(
+                                                    padding:
+                                                    const EdgeInsets
+                                                        .symmetric(
+                                                        vertical: 15.0),
+                                                    child: Text(
+                                                      '카메라 선택',
+                                                      style: GoogleFonts
+                                                          .notoSans(
+                                                        color: Colors.black,
+                                                        fontSize: 20.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 1,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: InkWell(
+                                              onTap: () {
+                                                getImage(
+                                                    ImageSource.gallery);
+                                              },
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                  BorderRadius.only(
+                                                    bottomLeft:
+                                                    Radius.circular(
+                                                        20.0),
+                                                    bottomRight:
+                                                    Radius.circular(
+                                                        20.0),
+                                                  ),
+                                                ),
+                                                child: Center(
+                                                  child: Padding(
+                                                    padding:
+                                                    const EdgeInsets
+                                                        .symmetric(
+                                                        vertical: 15.0),
+                                                    child: Text(
+                                                      '앨범에서 사진 선택',
+                                                      style: GoogleFonts
+                                                          .notoSans(
+                                                        color: Colors.black,
+                                                        fontSize: 20.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: InkWell(
+                                              onTap: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: mainMintText,
+                                                  borderRadius:
+                                                  BorderRadius.circular(
+                                                      20.0),
+                                                ),
+                                                child: Center(
+                                                  child: Padding(
+                                                    padding:
+                                                    const EdgeInsets
+                                                        .symmetric(
+                                                        vertical: 15),
+                                                    child: Text(
+                                                      '취소',
+                                                      style: GoogleFonts
+                                                          .notoSans(
+                                                        color: Colors.black,
+                                                        fontSize: 20.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                        backgroundColor: Colors.transparent);
+                  },
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 3,
+                    child: Center(
                       child: Icon(
                         Icons.camera_alt,
                         size: 40.0,
                         color: mainMintText,
                       ),
                     ),
-                  ],
-                ),
-              )),
-              Expanded(
-                child: SizedBox(),
-              ),
-            ],
-          ),
-
-          // 구성 위젯
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Text(
-                          '도비',
-                          style: GoogleFonts.blackHanSans(
-                            color: Colors.white,
-                            fontSize: 30.0,
-                          ),
-                          overflow: TextOverflow.clip,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(
-                          Icons.edit,
-                          color: mainMintText,
-                          size: 15.0,
-                        ),
-                      ],
-                    ),
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    child: Column(
-                      children: [
-                        // 내 랭킹
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 10.0,
-                            horizontal: 16.0,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.1),
-                            border: Border.all(
-                              color: mainMintText,
-                              width: 3.0,
-                            ),
-                            borderRadius: BorderRadius.circular(
-                              35.0,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Row(
                             children: [
-                              Container(
-                                height: 80,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                        'https://i.namu.wiki/i/icK0iZzkZlDEOP6MLwBXsYzojDOK99nLajS4WbfAmoIJ5liI0rHevtBzPVt08lKvt1u7hhiYEt4dlz1XL2lW9XQTxgYkP9HP4-3C7PinFptyVJ4VtTt9redYHtul6LJAXfPKDxxA_E53jXQKpCoecQ.webp',
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      '도비',
+                                      style: GoogleFonts.blackHanSans(
+                                        color: Colors.white,
+                                        fontSize: 30.0,
                                       ),
-                                      fit: BoxFit.cover,
                                     ),
-                                    shape: BoxShape.circle),
-                              ),
-                              Row(
-                                // crossAxisAlignment: CrossAxisAlignment.start,
-                                textBaseline: TextBaseline.alphabetic,
-                                crossAxisAlignment: CrossAxisAlignment.baseline,
-                                children: [
-                                  Text(
-                                    '♚ ',
-                                    style: GoogleFonts.notoSans(
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Icon(
+                                      Icons.edit,
                                       color: mainMintText,
-                                      fontSize: 50.0,
-                                      height: 1.0,
+                                      size: 15.0,
                                     ),
-                                  ),
-                                  Text(
-                                    '37490',
-                                    style: GoogleFonts.notoSans(
-                                      color: Colors.white,
-                                      fontSize: 25.0,
-                                      height: 1.0,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ],
                           ),
-                        ),
 
-                        SizedBox(
-                          height: 30,
-                        ),
 
-                        SingleChildScrollView(
-                          child: Row(
+                          Row(
+                            children: [
+                              Text(
+                                '☑️ 32게임 완 ☑️',
+                                style: GoogleFonts.notoSans(
+                                  color: Colors.white,
+                                  fontSize: 15.0,
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          SizedBox(
+                            height: 10,
+                          ),
+
+                          // 내 랭킹
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 10.0,
+                              horizontal: 16.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
+                              border: Border.all(
+                                color: mainMintText,
+                                width: 3.0,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                35.0,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  height: 80,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          'https://i.namu.wiki/i/icK0iZzkZlDEOP6MLwBXsYzojDOK99nLajS4WbfAmoIJ5liI0rHevtBzPVt08lKvt1u7hhiYEt4dlz1XL2lW9XQTxgYkP9HP4-3C7PinFptyVJ4VtTt9redYHtul6LJAXfPKDxxA_E53jXQKpCoecQ.webp',
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      shape: BoxShape.circle),
+                                ),
+                                Row(
+                                  // crossAxisAlignment: CrossAxisAlignment.start,
+                                  textBaseline: TextBaseline.alphabetic,
+                                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                                  children: [
+                                    Text(
+                                      '♚ ',
+                                      style: GoogleFonts.notoSans(
+                                        color: mainMintText,
+                                        fontSize: 50.0,
+                                        height: 1.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      '37490',
+                                      style: GoogleFonts.notoSans(
+                                        color: Colors.white,
+                                        fontSize: 25.0,
+                                        height: 1.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          SizedBox(
+                            height: 30,
+                          ),
+
+                          Row(
                             children: [
                               Expanded(
                                 child: Container(
@@ -345,20 +385,9 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                                       Column(
                                         children: [
                                           Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
                                                 '내가 쓴 리뷰 확인하기',
-                                                style: GoogleFonts.notoSans(
-                                                  color: Colors.white
-                                                      .withValues(alpha: 0.8),
-                                                  fontSize: 12.0,
-                                                ),
-                                                overflow: TextOverflow.ellipsis,
-                                              ),
-                                              Text(
-                                                '→',
                                                 style: GoogleFonts.notoSans(
                                                   color: Colors.white
                                                       .withValues(alpha: 0.8),
@@ -406,20 +435,9 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                                       Column(
                                         children: [
                                           Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
                                                 '내가 만든 로직 확인하기',
-                                                style: GoogleFonts.notoSans(
-                                                  color: Colors.white
-                                                      .withValues(alpha: 0.8),
-                                                  fontSize: 12.0,
-                                                ),
-                                                overflow: TextOverflow.ellipsis,
-                                              ),
-                                              Text(
-                                                '→',
                                                 style: GoogleFonts.notoSans(
                                                   color: Colors.white
                                                       .withValues(alpha: 0.8),
@@ -451,61 +469,15 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                               ),
                             ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
+                )
               ],
             ),
           ),
 
-          // Padding(
-          //   padding: const EdgeInsets.all(16.0),
-          //   child: Column(
-          //     children: [
-          //       Spacer(),
-          //       Row(
-          //         children: [
-          //           Expanded(
-          //             child: Container(
-          //               color: mainMintText,
-          //               child: Text(
-          //                 '도비',
-          //                 style: TextStyle(
-          //                   color: Colors.white,
-          //                   fontWeight: FontWeight.w500,
-          //                   fontSize: 20.0,
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //       Row(
-          //         children: [
-          //           Expanded(
-          //             child: Container(
-          //               color: Colors.amber,
-          //               child: Text(
-          //                 '리뷰',
-          //               ),
-          //             ),
-          //           ),
-          //           Expanded(
-          //             child: Container(
-          //               color: Colors.grey,
-          //               child: Text(
-          //                 '리뷰',
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //       Spacer(),
-          //     ],
-          //   ),
-          // )
         ],
       ),
     );

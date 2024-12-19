@@ -7,6 +7,7 @@ import 'package:knowknowgram_app/generate/screens/generate_screen.dart';
 import 'package:knowknowgram_app/home/views/screens/intro_screen.dart';
 import 'package:knowknowgram_app/play/screens/play_screen.dart';
 import 'package:knowknowgram_app/routes/app_routes.dart';
+import 'package:knowknowgram_app/user_info/screens/user_info_screen.dart';
 import 'package:knowknowgram_app/user_info/screens/user_screen.dart';
 
 import '../bindings/home_binding.dart';
@@ -41,7 +42,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.USERINFO,
-      page: () => UserScreen(),
+      page: () => UserInfoScreen(),
       binding: UserInfoBinding(),
       transition: Transition.noTransition,
     )
