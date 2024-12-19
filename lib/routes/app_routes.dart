@@ -5,5 +5,6 @@ class AppRoutes {
   static const PLAY = '/play';
   static const GENERATE = '/generate';
   static const USERINFO = '/user_info';
+  static const RANK = '/rank';
 
 }

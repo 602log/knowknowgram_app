@@ -2,10 +2,12 @@ import 'package:get/get.dart';
 import 'package:knowknowgram_app/bindings/generate_binding.dart';
 import 'package:knowknowgram_app/bindings/logic_list_binding.dart';
 import 'package:knowknowgram_app/bindings/play_binding.dart';
+import 'package:knowknowgram_app/bindings/rank_binding.dart';
 import 'package:knowknowgram_app/bindings/user_info_binding.dart';
 import 'package:knowknowgram_app/generate/screens/generate_screen.dart';
 import 'package:knowknowgram_app/home/views/screens/intro_screen.dart';
 import 'package:knowknowgram_app/play/screens/play_screen.dart';
+import 'package:knowknowgram_app/rank/screens/rank_screen.dart';
 import 'package:knowknowgram_app/routes/app_routes.dart';
 import 'package:knowknowgram_app/user_info/screens/user_info_screen.dart';
 import 'package:knowknowgram_app/user_info/screens/user_screen.dart';
@@ -45,6 +47,12 @@ class AppPages {
       page: () => UserInfoScreen(),
       binding: UserInfoBinding(),
       transition: Transition.noTransition,
-    )
+    ),
+    GetPage(
+      name: AppRoutes.RANK,
+      page: () => RankScreen(),
+      binding: RankBinding(),
+      transition: Transition.noTransition,
+    ),
   ];
 }

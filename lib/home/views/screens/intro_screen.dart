@@ -192,9 +192,7 @@ class IntroScreen extends StatelessWidget {
                   ),
                   HomeContainerWidget(
                     callBack: () {
-                      print(
-                        "랭킹 누름",
-                      );
+                      Get.toNamed('/rank');
                     },
                     title: "랭킹",
                     icon: Icons.stars_rounded,
