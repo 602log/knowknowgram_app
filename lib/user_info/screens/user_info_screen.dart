@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:knowknowgram_app/common/custom_appbar.dart';
@@ -307,60 +308,63 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                           ),
 
                           // 내 랭킹
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 10.0,
-                              horizontal: 16.0,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.1),
-                              border: Border.all(
-                                color: mainMintText,
-                                width: 3.0,
+                          InkWell(
+                            onTap: (){
+                              Get.toNamed('/rank');
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 10.0,
+                                horizontal: 16.0,
                               ),
-                              borderRadius: BorderRadius.circular(
-                                35.0,
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.1),
+                                border: Border.all(
+                                  color: mainMintText,
+                                  width: 3.0,
+                                ),
+                                borderRadius: BorderRadius.circular(
+                                  35.0,
+                                ),
                               ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  height: 80,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: NetworkImage(
-                                          'https://i.namu.wiki/i/icK0iZzkZlDEOP6MLwBXsYzojDOK99nLajS4WbfAmoIJ5liI0rHevtBzPVt08lKvt1u7hhiYEt4dlz1XL2lW9XQTxgYkP9HP4-3C7PinFptyVJ4VtTt9redYHtul6LJAXfPKDxxA_E53jXQKpCoecQ.webp',
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    height: 80,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: NetworkImage(
+                                            'https://i.namu.wiki/i/icK0iZzkZlDEOP6MLwBXsYzojDOK99nLajS4WbfAmoIJ5liI0rHevtBzPVt08lKvt1u7hhiYEt4dlz1XL2lW9XQTxgYkP9HP4-3C7PinFptyVJ4VtTt9redYHtul6LJAXfPKDxxA_E53jXQKpCoecQ.webp',
+                                          ),
+                                          fit: BoxFit.cover,
                                         ),
-                                        fit: BoxFit.cover,
+                                        shape: BoxShape.circle),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '37',
+                                        style: GoogleFonts.blackHanSans(
+                                          color: Colors.white,
+                                          fontSize: 50.0,
+                                        ),
                                       ),
-                                      shape: BoxShape.circle),
-                                ),
-                                Row(
-                                  // crossAxisAlignment: CrossAxisAlignment.start,
-                                  textBaseline: TextBaseline.alphabetic,
-                                  crossAxisAlignment: CrossAxisAlignment.baseline,
-                                  children: [
-                                    Text(
-                                      '♚ ',
-                                      style: GoogleFonts.notoSans(
-                                        color: mainMintText,
-                                        fontSize: 50.0,
-                                        height: 1.0,
+                                      SizedBox(width: 20.0,),
+                                      Text(
+                                        '도비',
+                                        style: GoogleFonts.notoSans(
+                                          color: Colors.white,
+                                          fontSize: 20.0,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
                                       ),
-                                    ),
-                                    Text(
-                                      '37490',
-                                      style: GoogleFonts.notoSans(
-                                        color: Colors.white,
-                                        fontSize: 25.0,
-                                        height: 1.0,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
 

@@ -250,7 +250,7 @@ class _RankScreenState extends State<RankScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '37490',
+                        '37',
                         style: GoogleFonts.blackHanSans(
                           color: Colors.white,
                           fontSize: 50.0,
