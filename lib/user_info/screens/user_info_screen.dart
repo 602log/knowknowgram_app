@@ -375,49 +375,54 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                           Row(
                             children: [
                               Expanded(
-                                child: Container(
-                                  height: 250.0,
-                                  padding: EdgeInsets.all(16.0),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withValues(alpha: 0.1),
-                                    borderRadius: BorderRadius.circular(
-                                      35.0,
-                                    ),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Text(
-                                                '내가 쓴 리뷰 확인하기',
-                                                style: GoogleFonts.notoSans(
-                                                  color: Colors.white
-                                                      .withValues(alpha: 0.8),
-                                                  fontSize: 12.0,
-                                                ),
-                                                overflow: TextOverflow.ellipsis,
-                                              ),
-                                            ],
-                                          ),
-                                          Divider(
-                                            thickness: 0.5,
-                                          ),
-                                        ],
+                                child: InkWell(
+                                  onTap: (){
+                                    Get.toNamed('/review_list');
+                                  },
+                                  child: Container(
+                                    height: 250.0,
+                                    padding: EdgeInsets.all(16.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(
+                                        35.0,
                                       ),
-                                      Expanded(
-                                        child: Center(
-                                          child: Text(
-                                            '내 리뷰',
-                                            style: GoogleFonts.blackHanSans(
-                                              color: mainMintText,
-                                              fontSize: 30.0,
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  '내가 쓴 리뷰 확인하기',
+                                                  style: GoogleFonts.notoSans(
+                                                    color: Colors.white
+                                                        .withValues(alpha: 0.8),
+                                                    fontSize: 12.0,
+                                                  ),
+                                                  overflow: TextOverflow.ellipsis,
+                                                ),
+                                              ],
+                                            ),
+                                            Divider(
+                                              thickness: 0.5,
+                                            ),
+                                          ],
+                                        ),
+                                        Expanded(
+                                          child: Center(
+                                            child: Text(
+                                              '내 리뷰',
+                                              style: GoogleFonts.blackHanSans(
+                                                color: mainMintText,
+                                                fontSize: 30.0,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

@@ -7,4 +7,5 @@ class AppRoutes {
   static const GENERATE = '/generate';
   static const USERINFO = '/user_info';
   static const RANK = '/rank';
+  static const REVIEW_LIST = '/review_list';
 }
