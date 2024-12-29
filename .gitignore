@@ -54,6 +54,9 @@ app.*.map.json
 /android/gradlew.bat
 
 /ios/
+/ios/knowknowgramInfo.plist
+
+/knowknowgram_app.iml
 
 *.env
 *.plist
@@ -121,4 +124,3 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-
