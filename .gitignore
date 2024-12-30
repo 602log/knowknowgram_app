@@ -55,6 +55,7 @@ app.*.map.json
 
 /ios/
 /ios/knowknowgramInfo.plist
+/ios/KnowknowgramInfo.xcconfig
 
 /knowknowgram_app.iml
 
